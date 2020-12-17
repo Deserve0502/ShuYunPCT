@@ -47,6 +47,7 @@ export default class ToDolist extends Component {
         this.setState({value})
     }
     handleEnter = (event) => {
+        console.log("dev1")
         if (event.charCode === 13) {
             this.todoClickSub();
         }
