@@ -47,7 +47,7 @@ export default class ToDolist extends Component {
         this.setState({value})
     }
     handleEnter = (event) => {
-        console.log("master");
+        console.log("master")
         if (event.charCode === 13) {
             this.todoClickSub();
         }
@@ -152,7 +152,7 @@ export default class ToDolist extends Component {
                                    &#xe604;
                                     </span>
                                     <span className='todoReturn iconfont'
-                                    onClick={(event) => this.todoRetuen(event, index)}
+                                    onClick={() => this.todoRetuen(index)}
                                     >
                                     &#xe61d;
                                     </span>
