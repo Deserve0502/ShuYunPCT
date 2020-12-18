@@ -50,19 +50,16 @@ export default class ToDolist extends Component {
             this.todoClickSub();
         }
     }
-    SubmitText = (e) =>{
+    SubmitText = (e) => {
         this.setState({value:e.target.value})
     }
-    todoRetuen = (index) =>{
+    todoRetuen = (index) => {
         let { unFinishedList } = this.state;
         let { FinishedList } = this.state;
         unFinishedList.push(FinishedList[index])
         FinishedList.splice(index, 1);
         this.setState({ FinishedList });
     } 
-    editUnFinList = (index) =>{
-        
-    }
     render() {
         let {unFinishedList} = this.state;
         let {FinishedList} = this.state;
@@ -112,8 +109,6 @@ export default class ToDolist extends Component {
                                     >
                                    &#xe604;
                                     </span>
-                                    <span className='todoEdit iconfont'
-                                    ></span>
                                 </li>
                             )
                         }
