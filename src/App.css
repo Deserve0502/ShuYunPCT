@@ -3,6 +3,21 @@
   padding: 24px;
   background: #fff;
 }
+.ant-layout-header{
+  background-color: white !important;
+}
+.ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark, .ant-menu.ant-menu-dark .ant-menu-sub{
+ background-color: white !important;
+}
+.ant-menu-dark .ant-menu-item{
+  color: #409EFF !important;
+}
+.ant-menu-dark .ant-menu-item:hover{
+  color: white !important;
+}
+.ant-menu-dark .ant-menu-item-selected {
+  color: white !important;
+}
 #components-layout-demo-top .logo {
   float: left;
   width: 120px;

@@ -13,6 +13,27 @@
       "unicode_decimal": 58909
     },
     {
+      "icon_id": "11908036",
+      "name": "编 辑",
+      "font_class": "bianji",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "12283277",
+      "name": "添加",
+      "font_class": "tianjia",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
+      "icon_id": "14831517",
+      "name": "重写",
+      "font_class": "zhongxie",
+      "unicode": "e91e",
+      "unicode_decimal": 59678
+    },
+    {
       "icon_id": "18749979",
       "name": "circle-close-fill ",
       "font_class": "circle-close-fill",
@@ -44,8 +65,8 @@
       "icon_id": "18749992",
       "name": "plus",
       "font_class": "plus",
-      "unicode": "e608",
-      "unicode_decimal": 58888
+      "unicode": "e609",
+      "unicode_decimal": 58889
     }
   ]
 }

@@ -22,7 +22,7 @@ ul, li {
 
 .todoDelList {
     float: right;
-    color: #001529 !important;
+    color: #409EFF !important;
     text-align: center;
     font-size: 25px;
 
@@ -31,14 +31,14 @@ ul, li {
 .todoDelList:hover {
     cursor: pointer;
     transition: 0.3s;
-    color: #1890ff !important;
+    color: #F56C6C !important;
 }
 
 .todoNum {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-color: #1890ff;
+    background-color: #F56C6C ;
     text-align: center;
     border-radius: 50%;
     color: white;
@@ -46,7 +46,9 @@ ul, li {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+.NumGreen {
+    background-color: #67C23A;
+}
 .todoList {
     margin-left: 30px;
 }
@@ -57,27 +59,31 @@ ul, li {
     font-size: 18px;
 }
 
-.todoSub>input {
+.todoSub > input {
     outline: none;
     width: 330px;
     border-width: 1px;
-    padding: 2px 0;
+    padding: 3.6px 0;
+    border: #DCDFE6 solid 1px;
     border-right: none;
+    border-radius: 7px 0px 0px 7px;
 }
 
-.todoSub>button {
-    background-color: #001529;
-    color: white;
-    border: none;
+.todoSub > button {
+    background-color: white;   
+    color: #409EFF;
+    border: #DCDFE6 solid 1px;
     padding: 2px 20px;
     box-sizing: border-box;
     border-radius: 0 7px 7px 0;
+    
 }
 
-.todoSub>button:hover {
+.todoSub > button:hover {
     background-color: #1890ff;
     cursor: pointer;
     transition: 0.3s;
+    color: white;
 }
 
 .todoContan {
@@ -88,11 +94,11 @@ ul, li {
 .todoH1 {
     font-size: 40px;
     text-align: center;
-    background-color: #001529;
+    background-color:  #409EFF;
     color: white;
 }
 
-.todoSub>button>span {
+.todoSub > button > span {
     margin-left: 10px;
 
 }
@@ -104,7 +110,7 @@ ul, li {
 
 .todoReturn {
     float: right;
-    color: #001529 !important;
+    color: #409EFF !important;
     text-align: center;
     font-size: 25px;
     margin-right: 30px;
@@ -114,7 +120,7 @@ ul, li {
 .todoReturn:hover {
     cursor: pointer;
     transition: 0.3s;
-    color: #1890ff !important;
+    color: #E6A23C !important;
 }
 
 .Finished li {
@@ -132,14 +138,14 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
-input[type=checkbox]+label {
+input[type=checkbox] + label {
     position: relative;
     overflow: visible;
     cursor: pointer;
     padding-left: 6px;
 }
 
-.label-check:before, .label-check:after {
+.labelCheck:before, .labelCheck:after {
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -153,7 +159,7 @@ input[type=checkbox]+label {
     border-radius: 50%;
 }
 
-input[type=checkbox]:checked+label:after {
+input[type=checkbox]:checked + label:after {
     -webkit-animation: zoom 0.5s ease;
     animation: zoom 0.5s ease;
     content: "✓";
@@ -164,12 +170,12 @@ input[type=checkbox]:checked+label:after {
     font-weight: bold;
 }
 
-.label-check2:after, .label-check2:before {
+.labelCheck2:after, .labelCheck2:before {
     border: none !important;
     cursor: default !important;
 }
 
-#input-2 {
+#checkFin {
     cursor: default !important;
 }
 

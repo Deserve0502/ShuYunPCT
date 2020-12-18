@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-//import ReactDom from 'react-dom'
-//import PropTypes from 'prop-types'
-//import axios from 'axios'
-//import { NavLink,Switch,Route,Redirect } from 'react-router-dom'
 import './ToDolist.css'
+
+
 
 export default class ToDolist extends Component {
     state = {
@@ -16,6 +14,7 @@ export default class ToDolist extends Component {
         ],
         value:'',
     }
+  
     checked = (event, index) => {
         let { unFinishedList } = this.state;
         let { FinishedList } = this.state;
@@ -44,10 +43,9 @@ export default class ToDolist extends Component {
         unFinishedList.push(temp);
         this.setState({ unFinishedList });
         value = '';
-        this.setState({value})
+        this.setState({ value })
     }
     handleEnter = (event) => {
-        console.log("master")
         if (event.charCode === 13) {
             this.todoClickSub();
         }
@@ -55,13 +53,16 @@ export default class ToDolist extends Component {
     SubmitText = (event) =>{
         this.setState({value:event.target.value})
     }
-    todoRetuen =(index) =>{
+    todoRetuen = (index) =>{
         let { unFinishedList } = this.state;
         let { FinishedList } = this.state;
         unFinishedList.push(FinishedList[index])
         FinishedList.splice(index, 1);
         this.setState({ FinishedList });
     } 
+    editUnFinList = (index) =>{
+        
+    }
     render() {
         let {unFinishedList} = this.state;
         let {FinishedList} = this.state;
@@ -80,7 +81,7 @@ export default class ToDolist extends Component {
                         onClick={this.todoClickSub}
                     >
                         添加
-                        <span className='iconfont'>&#xe608;</span>
+                        <span className='iconfont'>&#xe502;</span>
                     </button>
                 </div>
                 <p className='todoTitle'>
@@ -93,27 +94,26 @@ export default class ToDolist extends Component {
                     {
                         unFinishedList.map((unFList, index) => {
                             return (
-                                <li key={index}
-                               className='todoLi'
-                                >
+                                <li key={index} className='todoLi'>
                                     <input type="checkbox" 
-                                        onChange={(event) => this.checked(event, index)
-                                        }
-                                        id="input-1"
+                                           onChange={(event) => this.checked(event, index)}
+                                           id="checkInput"
                                     />
                                     <label
-                                    htmlFor="input-1"
-                                    className='label-check'
+                                    htmlFor="checkInput"
+                                    className='labelCheck'
                                     >  
                                     </label>
                                     <span className='todoList'>
                                     {unFList.text}
                                     </span>
                                     <span className='todoDelList iconfont'
-                                        onClick={() => this.delUnFinList(index)}
+                                          onClick={() => this.delUnFinList(index)}
                                     >
                                    &#xe604;
                                     </span>
+                                    <span className='todoEdit iconfont'
+                                    ></span>
                                 </li>
                             )
                         }
@@ -122,7 +122,7 @@ export default class ToDolist extends Component {
                 <p className='todoTitle'>
                 <span className='todoIcon iconfont'>&#xe605;</span>
                     已经完成
-                    <span className='todoNum'>
+                <span className='todoNum NumGreen'>
                 {FinishedList.length}
                 </span>
                 条
@@ -131,31 +131,27 @@ export default class ToDolist extends Component {
                     {
                         FinishedList.map((FList, index) => {
                             return (
-                                <li key={index}
-                                className='todoLi'
-                                >
+                                <li key={index} className='todoLi'>
                                 <input type="checkbox" 
                                        readOnly
-                                        checked={FList.checked}
-                                        id="input-2"
-                                    />
-                                    <label htmlFor="input-2"
-                                    className='label-check label-check2'
-                                    >
-                                    </label>
-                                     <span className='todoList'>
-                                     {FList.text}
-                                     </span>
-                                     <span className='todoDelList iconfont'
-                                        onClick={() => this.delFinList(index)}
-                                    >
-                                   &#xe604;
-                                    </span>
-                                    <span className='todoReturn iconfont'
-                                    onClick={() => this.todoRetuen(index)}
-                                    >
-                                    &#xe61d;
-                                    </span>
+                                       checked={FList.checked}
+                                       id="checkFin"
+                                />
+                                <label htmlFor="checkFin"
+                                       className='labelCheck labelCheck2'
+                                >
+                                </label>
+                                <span className='todoList'>{FList.text}</span>
+                                <span className='todoDelList iconfont'
+                                      onClick={() => this.delFinList(index)}
+                            >
+                                &#xe604;
+                                </span>
+                                <span className='todoReturn iconfont'
+                                      onClick={() => this.todoRetuen(index)}
+                                >
+                                &#xe91e;
+                                </span>
                                 </li>
                             )
                         }
