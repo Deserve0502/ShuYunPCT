@@ -15,15 +15,15 @@ export default class ToDolist extends Component {
         value:'',
     }
   
-    checked = (event, index) => {
+    checked = (e, index) => {
         let { unFinishedList } = this.state;
         let { FinishedList } = this.state;
-        if (event.target.checked) {
+        if (e.target.checked) {
             unFinishedList[index].checked = true;
             FinishedList.push(unFinishedList[index])
             unFinishedList.splice(index, 1);
             this.setState({ unFinishedList });
-            event.target.checked = false;
+            e.target.checked = false;
         } 
     }
     delUnFinList = (index) => {
@@ -45,13 +45,13 @@ export default class ToDolist extends Component {
         value = '';
         this.setState({ value })
     }
-    handleEnter = (event) => {
-        if (event.charCode === 13) {
+    handleEnter = (e) => {
+        if (e.charCode === 13) {
             this.todoClickSub();
         }
     }
-    SubmitText = (event) =>{
-        this.setState({value:event.target.value})
+    SubmitText = (e) =>{
+        this.setState({value:e.target.value})
     }
     todoRetuen = (index) =>{
         let { unFinishedList } = this.state;
@@ -73,9 +73,9 @@ export default class ToDolist extends Component {
             <div className='todoContan'>
                 <div className='todoSub'>
                     <input type="text"
-                        onKeyPress={(event) => this.handleEnter(event)}
+                        onKeyPress={(e) => this.handleEnter(e)}
                         value={value}
-                        onChange={(event)=>this.SubmitText(event)}
+                        onChange={(e)=>this.SubmitText(e)}
                     />
                     <button
                         onClick={this.todoClickSub}
@@ -96,7 +96,7 @@ export default class ToDolist extends Component {
                             return (
                                 <li key={index} className='todoLi'>
                                     <input type="checkbox" 
-                                           onChange={(event) => this.checked(event, index)}
+                                           onChange={(e) => this.checked(e, index)}
                                            id="checkInput"
                                     />
                                     <label
